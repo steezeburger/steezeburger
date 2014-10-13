@@ -1,7 +1,4 @@
 Beaker==1.6.4
-BeautifulSoup==3.2.1
-Django==1.7
-Editra==0.7.20
 Flask==0.10.1
 Jinja2==2.7.3
 Mako==1.0.0
