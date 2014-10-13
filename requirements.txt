@@ -4,7 +4,7 @@ Jinja2==2.7.3
 Mako==1.0.0
 MarkupSafe==0.23
 Pillow==2.6.0
-Terminator==0.97
+#Terminator==0.97
 Werkzeug==0.9.6
 arandr==0.1.7.1
 dnet==1.12
