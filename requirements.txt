@@ -30,6 +30,6 @@ itsdangerous==0.24
 #team==1.0
 #ufw==0.33
 wsgiref==0.1.2
-wxPython==3.0.1.1
-wxPython-common==3.0.1.1
+#wxPython==3.0.1.1
+#wxPython-common==3.0.1.1
 #zenmap==6.47
