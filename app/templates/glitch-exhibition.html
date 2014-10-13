@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="content">
+            <h2>glitch.</h2>
+            <h3>10.11.2014</h3>
+            <div class="img-contain">
+                <img class="img" src="{{ url_for('static', filename='images/originals/cowboy-original.jpg') }}">
+                <img class="img" src="{{ url_for('static', filename='images/glitched/glitched-cowboy.jpg') }}">
+                <div class="paragraphcontainer>"
+                    <p>vintage cowboy</p>
+                    <p>code can be found <a href="https://github.com/steezeburger/glitchy/blob/master/glitchy.py">here</a>
+                    </p>
+                </div>
+            </div>
+            <h3>10.7.2014</h3>
+            <div class="img-contain">
+                <img class="img" src="{{ url_for('static', filename='images/glitched/glitched_man.jpg') }}">
+                <div class="paragraphcontainer">
+                    <p>also glitched using Python</p>
+                    <p>code can be found <a href="https://github.com/steezeburger/glitchy/blob/master/glitchy.py">here</a>
+                    </p>
+                </div>
+            </div>
+            <h3>9.29.2014</h3>
+            <div class="img-contain">
+                <img class="img" src="{{ url_for('static', filename='images/glitched/glitched_sea_scaled.jpg') }}">
+                <div class="paragraphcontainer">
+                    <p>glitched using Python and currently being used as my banner.</p>
+                    <p>code can be found <a href="https://github.com/steezeburger/glitchy/blob/master/glitchy.py">here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sidr">
+        <ul>
+            <li><a href="{{ url_for('glitch_tutorials') }}">tutorials</a>
+            </li>
+            <li class="active"><a href="{{ url_for('glitch_exhibition') }}">exhibition</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>steezeburger</title>
+		<link rel="stylesheet" href="{{url_for('static', filename='css/main.css') }}">
+	    <link rel="stylesheet" href="{{url_for('static', filename='css/jquery.sidr.custom.css') }}">
+
+    </head>
+	<body>
+
+		<header>
+			<div class="container">
+				<h1 class="logo">steezeburger</h1>
+				<nav>
+					<ul class="menu">
+						<li><a href="{{ url_for('index') }}">home</a></li>
+						<li><a id="simple-menu" href="#sidr">glitch</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+        <div class="banner"><img class="img" src="{{ g.banner }}"></div>
+		<div class="bodycontainer">
+			{% with messages = get_flashed_messages() %}
+			{% if messages %}
+			<ul>
+			{% for message in messages %}
+				<li>{{ message }}</li>
+			{% endfor %}
+			</ul>
+			{% endif %}
+			{% endwith %}
+
+			{% block content %}
+			{% endblock %}
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="{{ url_for('static', filename='scripts/sidr-package-1.2.1/jquery.sidr.min.js') }}"></script>
+        <script>
+            $(document).ready(function () {
+                $('#simple-menu').sidr({
+                    side: 'right'
+                });
+            });
+    </script>
+
+	</body>
+</html>		
