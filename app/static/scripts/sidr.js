@@ -17,12 +17,18 @@ $(document).ready(function() {
        side: 'right',
        source: '#mobile-menu-content'
    });
+//   .bind('click', function (){
+//       $.sidr('close', 'sidr-main');
+//   });
+//   .bind('touchstart', function(){
+//       $.sidr('close', 'sidr-main');
+//   });
 });
 
 //$(document)
 //    .bind('click', function (){
-//        $.sidr('close', 'respNav');
+//        $.sidr('close', 'sidr-main');
 //    })
 //    .bind('touchstart', function(){
-//        $.sidr('close', 'respNav');
+//        $.sidr('close', 'sidr-main');
 //    });
