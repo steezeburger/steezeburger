@@ -17,7 +17,7 @@
 					<ul class="menu">
 						<li><a href="{{ url_for('index') }}">home</a></li>
 						<li><a id="glitch-menu" href="#glitch-menu">glitch</a></li>
-{#                        <li><a id="projects-menu" href="#projects-menu">projects</a></li>#}
+                        <li><a id="projects-menu" href="#projects-menu">projects</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -25,7 +25,7 @@
                 <h1 class="mobile-logo">steezeburger</h1>
                 <nav>
                     <ul class="menu">
-                        <li><a id="glitch-menu" href="#glitch-menu"><span class="glyphicon glyphicon-align-justify"></span></a></li>
+                        <li><a id="mobile-menu" href="#mobile-menu"><span class="glyphicon glyphicon-align-justify"></span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -55,17 +55,23 @@
             <!-- Menu content -->
             <div id="glitch-menu-content">
             <ul>
-                <li><a href="{{ url_for('glitch_tutorials') }}">tutorials</a>
-                </li>
-                <li><a href="{{ url_for('glitch_exhibition') }}">exhibition</a>
-                </li>
+                <li><a href="{{ url_for('glitch_tutorials') }}">tutorials</a></li>
+                <li><a href="{{ url_for('glitch_exhibition') }}">exhibition</a></li>
             </ul>
             </div>
 
-
             <div id="projects-menu-content">
             <ul>
-                <li><a href="{{ url_for('projects_glitchy') }}">glitchy</li>
+                <li><a href="{{ url_for('projects_glitchy') }}">glitchy</a></li>
+            </ul>
+            </div>
+
+            <div id="mobile-menu-content">
+            <ul>
+                <li><a href="{{ url_for('index') }}">home</a></li>
+                <li><a href="{{ url_for('glitch_tutorials') }}">tutorials</a></li>
+                <li><a href="{{ url_for('glitch_exhibition') }}">exhibition</a></li>
+                <li><a href="{{ url_for('projects_glitchy') }}">glitchy</a></li>
             </ul>
             </div>
 
@@ -74,21 +80,7 @@
         <script src="{{ url_for('static', filename='scripts/sidr-package-1.2.1/jquery.sidr.min.js') }}"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="{{ url_for('static', filename='simple-sidebar/js/bootstrap.min.js') }}"></script>
-        <script>
-            $(document).ready(function () {
-                $('#glitch-menu').sidr({
-                    side: 'right',
-                    source: '#glitch-menu-content'
-                });
-            });
-        </script>
-        <!-- simple-sidebar script -->
-{#        <script>#}
-{#            $("#menu-toggle").click(function(e) {#}
-{#                e.preventDefault();#}
-{#                $("#wrapper").toggleClass("toggled");#}
-{#            });#}
-{#        </script>#}
+        <script src="{{ url_for('static', filename='scripts/sidr.js') }}"></script>
         <!-- /scripts -->
 
 	</body>
