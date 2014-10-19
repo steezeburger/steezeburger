@@ -25,9 +25,9 @@ def splice_file(photo_data):
     return photo_data
 
 # opens picture
+# 'image' is the filename of the picture as string
 def glitch(image):
-    image_location = '/home/js/code/blog/app/static/images/tbg/' + image
-    image_file = open(image_location, 'r')
+    image_file= open(image, 'r')
     data = image_file.read()
     image_file.close()
 
@@ -35,11 +35,12 @@ def glitch(image):
     for i in range (1, 10):
        data = splice_file(data)
 
-    image_file = open(image_location, 'w')
+
+    image_file = open(image, 'w')
     image_file.write(data)
     image_file.close
 
-    return image
+    return os.path.basename(image)
 
 # if __name__ == '__main__':
 #
