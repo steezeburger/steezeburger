@@ -6,6 +6,7 @@ from random import choice
 import os
 from werkzeug import secure_filename
 import glitchy
+from PIL import Image
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -41,7 +42,9 @@ def projects_glitchy():
             print filename + ' secured'
             file.save(os.path.join(app.config['UPLOAD_FOLDER_TBG'], filename))
             print filename + ' saved'
-            filename = glitchy.glitch(app.config['BASE_DIR'] + '/app/static/images/tbg/' + filename)
+            image_location = app.config['BASE_DIR'] + '/app/static/images/glitched/' + filename
+            filename = glitchy.glitch(image_location)
+            Image.open(image_location).save(image_location)
             print filename + ' glitched'
 
 

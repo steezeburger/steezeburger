@@ -2,7 +2,6 @@ __author__ = 'js'
 
 import random
 import os
-from PIL import Image
 
 # creates random start and end locations
 def random_start_end(photo_data):
@@ -40,8 +39,6 @@ def glitch(image):
     image_file = open(image, 'w')
     image_file.write(data)
     image_file.close
-
-    Image.open(image).save(image)
 
     return os.path.basename(image)
 
