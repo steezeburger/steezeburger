@@ -31,8 +31,8 @@ def glitch(image):
     data = image_file.read()
     image_file.close()
 
-    # for i in range (1, random.randint(1,10)):
-    for i in range (1, 10):
+    for i in range (1, random.randint(1,10)):
+    # for i in range (1, 10):
        data = splice_file(data)
 
 
