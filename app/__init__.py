@@ -1,7 +1,9 @@
 __author__ = 'js'
 
-from flask import Flask, url_for
+from flask import Flask
 
-# creates instance of Flask class named 'app'
+# creates Flask object and config
 app = Flask(__name__)
+app.config.from_object('config')
+
 from app import views
