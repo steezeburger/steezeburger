@@ -53,4 +53,4 @@ def projects_glitchy():
 def glitched(filename):
     print filename
     return send_from_directory(app.config['UPLOAD_FOLDER_TBG'],
-                               filename)
+                               filename, mimetype='image/jpeg')
