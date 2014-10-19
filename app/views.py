@@ -36,13 +36,14 @@ def projects_glitchy():
     if request.method == 'POST':
         file = request.files['file']
         if file and allowed_file(file.filename):
-            # print 'extension allowed'
+            print 'extension allowed'
             filename = secure_filename(file.filename)
-            # print filename + ' secured'
-            filename = glitchy.glitch(app.config['BASE_DIR'] + '/app/static/images/tbg/' + filename)
-            # print filename + ' glitched'
+            print filename + ' secured'
             file.save(os.path.join(app.config['UPLOAD_FOLDER_TBG'], filename))
-            # print filename + ' saved'
+            print filename + ' saved'
+            filename = glitchy.glitch(app.config['BASE_DIR'] + '/app/static/images/tbg/' + filename)
+            print filename + ' glitched'
+
 
             return redirect(url_for('glitched', filename=filename))
 
