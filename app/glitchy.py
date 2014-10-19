@@ -33,8 +33,8 @@ def glitch(image):
 
     for i in range (1, random.randint(1,10)):
     # for i in range (1, 10):
-       #data = splice_file(data)
-        print 'it is working'
+       data = splice_file(data)
+        # print 'it is working'
 
     image_file = open(image, 'w')
     image_file.write(data)
