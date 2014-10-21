@@ -8,12 +8,13 @@ from werkzeug import secure_filename
 import glitchy
 from PIL import Image
 
+# allowed file extensions for jpg glitcher upload form
 def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS_TBG']
 
 # picks a random picture to display as banner
-# can call {{ g.banner }} in template
+# can call {{ g.banner }} in jinja template
 @app.before_request
 def random_banner():
     banner_choice = choice(os.listdir(app.config['BASE_DIR'] + '/app/static/images/banners'))
@@ -40,7 +41,7 @@ def projects_glitchy():
             print 'extension allowed'
             filename = secure_filename(file.filename)
             print filename + ' secured'
-            file.save(os.path.join(app.config['UPLOAD_FOLDER_TBG'], filename))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER_GLITCHY'], filename))
             print filename + ' saved'
             image_location = app.config['BASE_DIR'] + '/app/static/images/glitched/' + filename
             filename = glitchy.glitch(image_location)
@@ -55,5 +56,5 @@ def projects_glitchy():
 @app.route('/glitched/<filename>')
 def glitched(filename):
     print filename
-    return send_from_directory(app.config['UPLOAD_FOLDER_TBG'],
+    return send_from_directory(app.config['UPLOAD_FOLDER_GLITCHY'],
                                filename, mimetype='image/jpeg')

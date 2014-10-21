@@ -10,7 +10,7 @@ SECRET_KEY = 'bananapants2014'
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # upload folder for to be glitched images
-UPLOAD_FOLDER_TBG = BASE_DIR + '/app/static/images/glitched'
+UPLOAD_FOLDER_GLITCHY = BASE_DIR + '/app/static/images/glitched'
 
 # allowed extensions for image glitcher uploads.
 # currently jpg only
