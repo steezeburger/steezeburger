@@ -4,7 +4,7 @@ from app import app
 from flask import redirect, render_template, request, url_for, g, send_from_directory
 from random import choice
 import os
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 import glitchy
 from PIL import Image
 
