@@ -45,7 +45,7 @@ def projects_glitchy():
             print filename + ' saved'
             image_location = app.config['BASE_DIR'] + '/app/static/images/glitched/' + filename
             filename = glitchy.glitch(image_location)
-            #Image.open(image_location).save(image_location)
+            Image.open(image_location).save(image_location)
             print filename + ' glitched'
 
             return redirect(url_for('glitched', filename=filename))
