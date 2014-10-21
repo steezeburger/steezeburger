@@ -1,6 +1,4 @@
 
 .idea
 /app/static/images/glitched/*
-*.jpg
-*.jpeg
 *.pyc
