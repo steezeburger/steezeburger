@@ -7,7 +7,7 @@ for files in os.listdir(UPLOAD_FOLDER_GLITCHY):
     file_path = os.path.join(UPLOAD_FOLDER_GLITCHY, files)
     try:
         os.unlink(file_path)
-    except Exception, error:
-        print error
+    except Exception, e:
+        print e
 
 
