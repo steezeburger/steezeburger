@@ -18,7 +18,7 @@
 				<nav>
 					<ul class="menu">
 						<li><a href="{{ url_for('index') }}">home</a></li>
-						<li><a id="glitch-menu" href="#glitch-menu">glitch</a></li>
+						<li><a id="tutorials-menu" href="#tutorials-menu">tutorials</a></li>
                         <li><a id="projects-menu" href="#projects-menu">projects</a></li>
 					</ul>
 				</nav>
@@ -55,10 +55,9 @@
         <!-- /body -->
 
             <!-- Menu content -->
-            <div id="glitch-menu-content">
+            <div id="tutorials-menu-content">
             <ul>
-                <li><a href="{{ url_for('glitch_tutorials') }}">tutorials</a></li>
-                <li><a href="{{ url_for('glitch_exhibition') }}">exhibition</a></li>
+                <li><a href="{{ url_for('tutorials') }}">all tutorials</a></li>
             </ul>
             </div>
 
@@ -71,7 +70,7 @@
             <div id="mobile-menu-content">
             <ul>
                 <li><a href="{{ url_for('index') }}">home</a></li>
-                <li><a href="{{ url_for('glitch_tutorials') }}">tutorials</a></li>
+                <li><a href="{{ url_for('tutorials') }}">tutorials</a></li>
                 <li><a href="{{ url_for('glitch_exhibition') }}">exhibition</a></li>
                 <li><a href="{{ url_for('projects_glitchy') }}">glitchy</a></li>
             </ul>

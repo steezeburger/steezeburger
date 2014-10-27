@@ -61,9 +61,25 @@ header h1.logo:hover {
 }
 
 .paragraphcontainer {
+    top: 40px;
+    margin-top: 20px;
     width: 90%;
     margin: 0 auto;
+
 }
+
+.paragraphcontainer > * {
+    margin-left: 40px;
+}
+
+.paragraphcontainer ul li {
+    font-weight: bold;
+}
+
+.paragraphcontainer ul li p {
+    font-weight: normal;
+}
+
 
 .content {
     position: relative;
@@ -73,11 +89,18 @@ header h1.logo:hover {
     background-color: #eeeeee;
 }
 
+.content + .content {
+    padding-top: 20px;
+}
+
+li {
+    color: #999;
+}
+
 h2 {
     font-size: 3em;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 40px;
     letter-spacing: -2px;
     color: #999;
 }
@@ -86,7 +109,6 @@ h3 {
     font-size: 1.7em;
     font-weight: 100;
     margin-top: 30px;
-    margin-left: 40px;
     letter-spacing: -1px;
     color: #999;
 }
@@ -95,7 +117,6 @@ h4 {
     font-size: 1em;
     font-weight: 100;
     margin-top: 30px;
-    margin-left: 40px;
     letter-spacing: -1px;
     color: #999;
 }

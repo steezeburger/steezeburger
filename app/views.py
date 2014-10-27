@@ -1,17 +1,23 @@
 __author__ = 'js'
 
 from app import app
-from flask import redirect, render_template, request, url_for, g, send_from_directory
+from flask import redirect, render_template, request, url_for, g, send_from_directory, Markup
 from random import choice
 import os
+from os.path import isfile, join
 from werkzeug.utils import secure_filename
 import glitchy
 from PIL import Image
+import markdown
 
 # allowed file extensions for jpg glitcher upload form
-def allowed_file(filename):
+def allowed_files_glitch(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS_TBG']
+
+def allowed_files_tutorials(filename):
+    return '.' in filename and \
+        filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS_TUTORIALS']
 
 # picks a random picture to display as banner
 # can call {{ g.banner }} in jinja template
@@ -37,7 +43,7 @@ def glitch_tutorials():
 def projects_glitchy():
     if request.method == 'POST':
         file = request.files['file']
-        if file and allowed_file(file.filename):
+        if file and allowed_files_glitch(file.filename):
             print 'extension allowed'
             filename = secure_filename(file.filename)
             print filename + ' secured'
@@ -52,8 +58,43 @@ def projects_glitchy():
 
     return render_template('projects-glitchy.html')
 
-@app.route('/glitched/<filename>')
+@app.route('/glitched/<filename>/')
 def glitched(filename):
     print filename
     return send_from_directory(app.config['UPLOAD_FOLDER_GLITCHY'],
                                filename, mimetype='image/jpeg')
+
+@app.route('/tutorials/upload/', methods=['GET', 'POST'])
+def tutorials_upload():
+    if request.method == 'POST':
+        tutorial_file = request.files['tutorial']
+        if tutorial_file and allowed_files_tutorials(tutorial_file.filename):
+            print 'extension allowed'
+            filename = secure_filename(tutorial_file.filename)
+            print filename + ' secured'
+            tutorial_file.save(os.path.join(app.config['UPLOAD_FOLDER_TUTORIALS'], filename))
+            print filename + ' saved'
+
+            #return redirect(url_for('tutorials'))
+            return render_template('tutorials.html')
+
+    return render_template('tutorials-upload.html')
+
+@app.route('/tutorials/')
+def tutorials():
+    # TODO
+    #  display all tutorial pages (most recent first)
+    #  each in their own container (front end wise, visually)
+
+    tutorials = [f for f in os.listdir(app.config['UPLOAD_FOLDER_TUTORIALS']) if isfile(join(app.config['UPLOAD_FOLDER_TUTORIALS'], f)) ]
+    print tutorials
+
+    contents = []
+
+    for tutorial in tutorials:
+        handler = open(app.config['UPLOAD_FOLDER_TUTORIALS'] + '/' + tutorial, 'r')
+        content = handler.read()
+        handler.close()
+        contents.append(Markup(markdown.markdown(content)))
+
+    return render_template('tutorials.html', contents=contents)

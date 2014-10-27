@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for post in contents %}
+<div class="content">
+<div class="paragraphcontainer">
+{{ post }}
+</div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

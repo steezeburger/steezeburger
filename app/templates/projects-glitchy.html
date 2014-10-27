@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
    <div class="content">
-            <h3>glitchy</h3>
             <div class="paragraphcontainer">
+                <h3>glitchy</h3>
                 <p>glitchy is a short Python script that effectively "glitches" jpegs. It works by copying and pasting a
                    random portion of the jpg data to random locations a random number of times.
                 </p>
@@ -31,6 +31,10 @@
                     </ul>
                 </p>
                 <br>
+                <br>
+                <p>
+                    <strong>you can see some of the other images i've glitched <a href="{{ url_for('glitch_exhibition') }}">here</a></strong>
+                </p>
                 <br>
                 <h4>upload jpg file here to see the script in action</h4>
 

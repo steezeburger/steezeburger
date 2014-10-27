@@ -2,10 +2,10 @@
  * Created by js on 10/15/14.
  */
 $(document).ready(function() {
-   $('#glitch-menu').sidr({
-       name: 'glitch',
+   $('#tutorials-menu').sidr({
+       name: 'tutorials',
        side: 'right',
-       source: '#glitch-menu-content'
+       source: '#tutorials-menu-content'
    });
    $('#projects-menu').sidr({
        name: 'projects',
