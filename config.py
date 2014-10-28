@@ -17,10 +17,10 @@ UPLOAD_FOLDER_TUTORIALS = BASE_DIR + '/app/static/tutorials'
 
 # allowed extensions for image glitcher uploads.
 # currently jpg only
-ALLOWED_EXTENSIONS_TBG = set(['jpg', 'jpeg'])
+ALLOWED_EXTENSIONS_TBG = {'jpg', 'jpeg'}
 
 # allowed extensions for tutorial uploads
-ALLOWED_EXTENSIONS_TUTORIALS = set(['md'])
+ALLOWED_EXTENSIONS_TUTORIALS = {'md'}
 
 
 

@@ -1,48 +1,53 @@
 {% extends "base.html" %}
 {% block content %}
-   <div class="content">
-            <div class="paragraphcontainer">
-                <h3>glitchy</h3>
-                <p>glitchy is a short Python script that effectively "glitches" jpegs. It works by copying and pasting a
-                   random portion of the jpg data to random locations a random number of times.
-                </p>
-                <p>
-                    <strong>the code can be found <a href="https://github.com/steezeburger/glitchy/blob/master/glitchy.py">here</a></strong>
-                <p>
-                    due to the randomness of the script, some images will be glitched to corruption. This means the
-                    browser will not properly display the image, and the server will return some type of error. This
-                    happens when the header data of the jpeg file is overwritten. I'm working on a way to avoid
-                    copying/pasting over the header data of the jpeg file which will resolve the issue.
-                </p>
-                <p>
-                    <strong>until I work out the kinks, some ways to avoid a corrupted image are:</strong>
-                    <ul>
-                        <li>use medium or larger images.
-                            <p>
-                                small images contain way less data, which means there is a higher chance of the header
-                                data being overwritten
-                            </p>
-                        </li>
-                        <li>don't try to glitch an image too many times.
-                            <p>
-                                this will increase the chances of overwriting the header data
-                            </p>
-                        </li>
-                    </ul>
-                </p>
-                <br>
-                <br>
-                <p>
-                    <strong>you can see some of the other images i've glitched <a href="{{ url_for('glitch_exhibition') }}">here</a></strong>
-                </p>
-                <br>
-                <h4>upload jpg file here to see the script in action</h4>
+    <div class="content">
+        <div class="paragraphcontainer">
+            <h3>glitchy</h3>
 
-                <form action="" method="post" enctype="multipart/form-data">
-                    <p><input type=file name=file>
-                        <input type=submit value=Upload></p>
-                </form>
-            </div>
+            <p>glitchy is a short Python script that effectively "glitches" jpegs. It works by copying and pasting a
+                random portion of the jpg data to random locations a random number of times.
+            </p>
+
+            <p>
+                <strong>the code can be found <a href="https://github.com/steezeburger/glitchy/blob/master/glitchy.py">here</a></strong>
+
+            <p>
+                due to the randomness of the script, some images will be glitched to corruption. This means the
+                browser will not properly display the image, and the server will return some type of error. This
+                happens when the header data of the jpeg file is overwritten. I'm working on a way to avoid
+                copying/pasting over the header data of the jpeg file which will resolve the issue.
+            </p>
+
+            <p>
+                <strong>until I work out the kinks, some ways to avoid a corrupted image are:</strong>
+            <ul>
+                <li>use medium or larger images.
+                    <p>
+                        small images contain way less data, which means there is a higher chance of the header
+                        data being overwritten
+                    </p>
+                </li>
+                <li>don't try to glitch an image too many times.
+                    <p>
+                        this will increase the chances of overwriting the header data
+                    </p>
+                </li>
+            </ul>
+            </p>
+            <br>
+            <br>
+
+            <p>
+                <strong>you can see some of the other images i've glitched <a href="{{ url_for('glitch_exhibition') }}">here</a></strong>
+            </p>
+            <br>
+            <h4>upload jpg file here to see the script in action</h4>
+
+            <form action="" method="post" enctype="multipart/form-data">
+                <p><input type=file name=file>
+                    <input type=submit value=Upload></p>
+            </form>
         </div>
+    </div>
     </div>
 {% endblock %}

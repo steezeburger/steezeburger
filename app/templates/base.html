@@ -1,95 +1,95 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>stzbrgr</title>
-        <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
-        <link rel="icon" href="{{url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="{{url_for('static', filename='css/main.css') }}">
-	    <link rel="stylesheet" href="{{url_for('static', filename='css/jquery.sidr.custom.css') }}">
-	    <link rel="stylesheet" href="{{url_for('static', filename='simple-sidebar/css/simle-sidebar.css') }}">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    </head>
-	<body>
+<head>
+    <title>stzbrgr</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.sidr.custom.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='simple-sidebar/css/simle-sidebar.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
 
-		<header>
-			<div class="container visible-lg visible-md">
-                {% if title %}
-				<h1 class="logo">steezeburger<span style="color: #999">{{ title }}</span></h1>
-				{% else %}
-                <h1 class="logo">steezeburger</h1>
-                {% endif %}
-                <nav>
-					<ul class="menu">
-						<li><a href="{{ url_for('index') }}">home</a></li>
-						<li><a id="tutorials-menu" href="#tutorials-menu">tutorials</a></li>
-                        <li><a id="projects-menu" href="#projects-menu">projects</a></li>
-					</ul>
-				</nav>
-			</div>
-            <div class="container-mobile visible-sm visible-xs">
-                {% if title %}
-				<h1 class="mobile-logo">steezeburger<span style="color: #999">{{ title }}</span></h1>
-				{% else %}
-                <h1 class="mobile-logo">steezeburger</h1>
-                {% endif %}
-                <nav>
-                    <ul class="menu">
-                        <li><a id="mobile-menu" href="#mobile-menu"><span class="glyphicon glyphicon-align-justify"></span></a></li>
-                    </ul>
-                </nav>
-            </div>
-		</header>
-
-        <!-- Random banner -->
-        <div class="banner"><img class="img" src="{{ g.banner }}"></div>
-
-        <!-- Body content w/ message flash -->
-        <div class="bodycontainer">
-			{% with messages = get_flashed_messages() %}
-			{% if messages %}
-			<ul>
-			{% for message in messages %}
-				<li>{{ message }}</li>
-			{% endfor %}
-			</ul>
-			{% endif %}
-			{% endwith %}
-
-			{% block content %}
-			{% endblock %}
-		</div>
-        <!-- /body -->
-
-            <!-- Menu content -->
-            <div id="tutorials-menu-content">
-            <ul>
-                <li><a href="{{ url_for('tutorials') }}">all tutorials</a></li>
-            </ul>
-            </div>
-
-            <div id="projects-menu-content">
-            <ul>
-                <li><a href="{{ url_for('projects_glitchy') }}">glitchy</a></li>
-            </ul>
-            </div>
-
-            <div id="mobile-menu-content">
-            <ul>
+<header>
+    <div class="container visible-lg visible-md">
+        {% if title %}
+            <h1 class="logo">steezeburger<span style="color: #999">{{ title }}</span></h1>
+        {% else %}
+            <h1 class="logo">steezeburger</h1>
+        {% endif %}
+        <nav>
+            <ul class="menu">
                 <li><a href="{{ url_for('index') }}">home</a></li>
-                <li><a href="{{ url_for('tutorials') }}">tutorials</a></li>
-                <li><a href="{{ url_for('glitch_exhibition') }}">exhibition</a></li>
-                <li><a href="{{ url_for('projects_glitchy') }}">glitchy</a></li>
+                <li><a id="tutorials-menu" href="#tutorials-menu">tutorials</a></li>
+                <li><a id="projects-menu" href="#projects-menu">projects</a></li>
             </ul>
-            </div>
+        </nav>
+    </div>
+    <div class="container-mobile visible-sm visible-xs">
+        {% if title %}
+            <h1 class="mobile-logo">steezeburger<span style="color: #999">{{ title }}</span></h1>
+        {% else %}
+            <h1 class="mobile-logo">steezeburger</h1>
+        {% endif %}
+        <nav>
+            <ul class="menu">
+                <li><a id="mobile-menu" href="#mobile-menu"><span class="glyphicon glyphicon-align-justify"></span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-        <!-- scripts -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="{{ url_for('static', filename='scripts/sidr-package-1.2.1/jquery.sidr.min.js') }}"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="{{ url_for('static', filename='simple-sidebar/js/bootstrap.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='scripts/sidr.js') }}"></script>
-        <!-- /scripts -->
+<!-- Random banner -->
+<div class="banner"><img class="img" src="{{ g.banner }}" alt="glitched banner"></div>
 
-	</body>
+<!-- Body content w/ message flash -->
+<div class="bodycontainer">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+</div>
+<!-- /body -->
+
+<!-- Menu content -->
+<div id="tutorials-menu-content">
+    <ul>
+        <li><a href="{{ url_for('tutorials') }}">all tutorials</a></li>
+    </ul>
+</div>
+
+<div id="projects-menu-content">
+    <ul>
+        <li><a href="{{ url_for('projects_glitchy') }}">glitchy</a></li>
+    </ul>
+</div>
+
+<div id="mobile-menu-content">
+    <ul>
+        <li><a href="{{ url_for('index') }}">home</a></li>
+        <li><a href="{{ url_for('tutorials') }}">tutorials</a></li>
+        <li><a href="{{ url_for('glitch_exhibition') }}">exhibition</a></li>
+        <li><a href="{{ url_for('projects_glitchy') }}">glitchy</a></li>
+    </ul>
+</div>
+
+<!-- scripts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='scripts/sidr-package-1.2.1/jquery.sidr.min.js') }}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='scripts/sidr.js') }}"></script>
+<!-- /scripts -->
+
+</body>
 </html>		

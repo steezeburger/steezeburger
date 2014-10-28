@@ -19,21 +19,26 @@
     box-shadow: inset 0 0 5px 5px #222
 */
 }
+
 .sidr .sidr-inner {
     padding: 0 0 15px
 }
-.sidr .sidr-inner>p {
+
+.sidr .sidr-inner > p {
     margin-left: 15px;
     margin-right: 15px
 }
+
 .sidr.right {
     left: auto;
     right: -260px
 }
+
 .sidr.left {
     left: -260px;
     right: auto
 }
+
 .sidr h1,
 .sidr h2,
 .sidr h3,
@@ -55,17 +60,21 @@
     -moz-box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.2)
 }
+
 .sidr p {
     font-size: 13px;
     margin: 0 0 12px
 }
+
 .sidr p a {
     color: #999;
 }
-.sidr>p {
+
+.sidr > p {
     margin-left: 15px;
     margin-right: 15px
 }
+
 .sidr ul {
     display: block;
     margin: 0 0 15px;
@@ -73,6 +82,7 @@
     border-top: none;
     border-bottom: none
 }
+
 .sidr ul li {
     display: block;
     margin: 0;
@@ -80,18 +90,20 @@
     border-top: none;
     border-bottom: 1px solid #999
 }
+
 .sidr ul li:hover,
 .sidr ul li.active,
 .sidr ul li.sidr-class-active {
     border-top: none;
     line-height: 49px
 }
-.sidr ul li:hover>a,
-.sidr ul li:hover>span,
-.sidr ul li.active>a,
-.sidr ul li.active>span,
-.sidr ul li.sidr-class-active>a,
-.sidr ul li.sidr-class-active>span {
+
+.sidr ul li:hover > a,
+.sidr ul li:hover > span,
+.sidr ul li.active > a,
+.sidr ul li.active > span,
+.sidr ul li.sidr-class-active > a,
+.sidr ul li.sidr-class-active > span {
     background-color: #D1D1D1;
     /*
     -webkit-box-shadow: inset 0 0 15px 3px #222;
@@ -99,6 +111,7 @@
     box-shadow: inset 0 0 15px 3px #222
 */
 }
+
 .sidr ul li a,
 .sidr ul li span {
     padding: 0 15px;
@@ -106,46 +119,55 @@
     text-decoration: none;
     color: #999
 }
+
 .sidr ul li ul {
     border-bottom: none;
     margin: 0
 }
+
 .sidr ul li ul li {
     line-height: 40px;
     font-size: 13px
 }
+
 .sidr ul li ul li:last-child {
     border-bottom: none
 }
+
 .sidr ul li ul li:hover,
 .sidr ul li ul li.active,
 .sidr ul li ul li.sidr-class-active {
     border-top: none;
     line-height: 41px
 }
-.sidr ul li ul li:hover>a,
-.sidr ul li ul li:hover>span,
-.sidr ul li ul li.active>a,
-.sidr ul li ul li.active>span,
-.sidr ul li ul li.sidr-class-active>a,
-.sidr ul li ul li.sidr-class-active>span {
-/*
-    -webkit-box-shadow: inset 0 0 15px 3px #222;
-    -moz-box-shadow: inset 0 0 15px 3px #222;
-    box-shadow: inset 0 0 15px 3px #222
-*/
+
+.sidr ul li ul li:hover > a,
+.sidr ul li ul li:hover > span,
+.sidr ul li ul li.active > a,
+.sidr ul li ul li.active > span,
+.sidr ul li ul li.sidr-class-active > a,
+.sidr ul li ul li.sidr-class-active > span {
+    /*
+        -webkit-box-shadow: inset 0 0 15px 3px #222;
+        -moz-box-shadow: inset 0 0 15px 3px #222;
+        box-shadow: inset 0 0 15px 3px #222
+    */
 }
+
 .sidr ul li ul li a,
 .sidr ul li ul li span {
     color: rgba(255, 255, 255, 0.8);
     padding-left: 30px
 }
+
 .sidr form {
     margin: 0 15px
 }
+
 .sidr label {
     font-size: 13px
 }
+
 .sidr input[type="text"],
 .sidr input[type="password"],
 .sidr input[type="date"],
@@ -176,16 +198,19 @@
     display: block;
     clear: both
 }
+
 .sidr input[type=checkbox] {
     width: auto;
     display: inline;
     clear: none
 }
+
 .sidr input[type=button],
 .sidr input[type=submit] {
     color: #333;
     background: #fff
 }
+
 .sidr input[type=button]:hover,
 .sidr input[type=submit]:hover {
     background: rgba(255, 255, 255, 0.9)
