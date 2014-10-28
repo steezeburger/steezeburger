@@ -33,11 +33,11 @@ def index():
 
 @app.route('/glitch/exhibition/')
 def glitch_exhibition():
-    return render_template('glitch-exhibition.html')
+    return render_template('glitch-exhibition.html', title='.glitch')
 
 @app.route('/glitch/tutorials/')
 def glitch_tutorials():
-    return render_template('glitch-tutorials.html')
+    return render_template('glitch-tutorials.html', title='.glitch-tutorials')
 
 @app.route('/projects/glitchy/', methods=['GET', 'POST'])
 def projects_glitchy():
@@ -56,7 +56,7 @@ def projects_glitchy():
 
             return redirect(url_for('glitched', filename=filename))
 
-    return render_template('projects-glitchy.html')
+    return render_template('projects-glitchy.html', title='.glitchy')
 
 @app.route('/glitched/<filename>/')
 def glitched(filename):
@@ -76,9 +76,9 @@ def tutorials_upload():
             print filename + ' saved'
 
             #return redirect(url_for('tutorials'))
-            return render_template('tutorials.html')
+            return render_template('tutorials.html', title='.tutorials')
 
-    return render_template('tutorials-upload.html')
+    return render_template('tutorials-upload.html', title='.upload')
 
 @app.route('/tutorials/')
 def tutorials():
@@ -97,4 +97,4 @@ def tutorials():
         handler.close()
         contents.append(Markup(markdown.markdown(content)))
 
-    return render_template('tutorials.html', contents=contents)
+    return render_template('tutorials.html', contents=contents, title='.tutorials')

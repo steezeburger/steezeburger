@@ -25,7 +25,7 @@ header {
 header h1.mobile-logo {
     margin: 0;
     font-size: 2em;
-    color: #fff;
+    color: #CCCCCC;
     text-transform: lowercase;
     float: left;
 }
@@ -33,9 +33,13 @@ header h1.mobile-logo {
 header h1.logo {
     margin-top: 5px;
     font-size: 1.7em;
-    color: #fff;
+    color: #CCCCCC;
     text-transform: lowercase;
     float: left;
+}
+
+header h1.logo-dark {
+    color: #999;
 }
 
 header h1.logo:hover {

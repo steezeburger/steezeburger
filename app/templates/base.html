@@ -14,8 +14,12 @@
 
 		<header>
 			<div class="container visible-lg visible-md">
-				<h1 class="logo">steezeburger</h1>
-				<nav>
+                {% if title %}
+				<h1 class="logo">steezeburger<span style="color: #999">{{ title }}</span></h1>
+				{% else %}
+                <h1 class="logo">steezeburger</h1>
+                {% endif %}
+                <nav>
 					<ul class="menu">
 						<li><a href="{{ url_for('index') }}">home</a></li>
 						<li><a id="tutorials-menu" href="#tutorials-menu">tutorials</a></li>
@@ -24,7 +28,11 @@
 				</nav>
 			</div>
             <div class="container-mobile visible-sm visible-xs">
+                {% if title %}
+				<h1 class="mobile-logo">steezeburger<span style="color: #999">{{ title }}</span></h1>
+				{% else %}
                 <h1 class="mobile-logo">steezeburger</h1>
+                {% endif %}
                 <nav>
                     <ul class="menu">
                         <li><a id="mobile-menu" href="#mobile-menu"><span class="glyphicon glyphicon-align-justify"></span></a></li>
