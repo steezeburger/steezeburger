@@ -24,6 +24,9 @@
                 <li><a href="{{ url_for('index') }}">home</a></li>
                 <li><a id="tutorials-menu" href="#tutorials-menu">tutorials</a></li>
                 <li><a id="projects-menu" href="#projects-menu">projects</a></li>
+                {% if g.user.is_authenticated() %}
+                    <li><a href="{{ url_for('logout') }}">logout</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>
@@ -81,6 +84,9 @@
         <li><a href="{{ url_for('tutorials') }}">tutorials</a></li>
         <li><a href="{{ url_for('glitch_exhibition') }}">exhibition</a></li>
         <li><a href="{{ url_for('projects_glitchy') }}">glitchy</a></li>
+        {% if g.user.is_authenticated() %}
+            <li><a href="{{ url_for('logout') }}">logout</a></li>
+        {% endif %}
     </ul>
 </div>
 

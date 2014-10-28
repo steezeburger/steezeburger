@@ -12,6 +12,12 @@ body {
     top: 40px;
 }
 
+.login-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
 /* Create light grey header with white logo*/
 header {
     background-color: #eeeeee;

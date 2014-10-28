@@ -22,5 +22,9 @@ ALLOWED_EXTENSIONS_TBG = {'jpg', 'jpeg'}
 # allowed extensions for tutorial uploads
 ALLOWED_EXTENSIONS_TUTORIALS = {'md'}
 
+# database repos
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'users.db')
+SQLALCHEMY_MIGRATE_REPO = os.path.join(BASE_DIR, 'db_repository')
+
 
 

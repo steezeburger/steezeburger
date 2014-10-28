@@ -1,14 +1,24 @@
 __author__ = 'js'
 
 from app import app
-from flask import redirect, render_template, request, url_for, g, send_from_directory, Markup
+
+from flask import (redirect, render_template, request, url_for,
+                   g, send_from_directory, Markup, session, abort,
+                   flash)
+
+from flask.ext.login import (login_user, logout_user, current_user,
+                             login_required)
+
+from app.models import User
+
 from random import choice
 import os
 from os.path import isfile, join
 from werkzeug.utils import secure_filename
-import glitchy
 from PIL import Image
 import markdown
+import glitchy
+
 
 # allowed file extensions for jpg glitcher upload form
 def allowed_files_glitch(filename):
@@ -73,7 +83,35 @@ def glitched(filename):
                                filename, mimetype='image/jpeg')
 
 
+@app.before_request
+def before_request():
+    g.user = current_user
+
+
+@app.route('/login/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        return render_template('login.html', title='.login')
+    username = request.form['username']
+    password = request.form['password']
+    user = User.query.filter_by(username=username).first()
+    print user
+    if user is not None and user.verify_password(password):
+        login_user(user)
+        flash('login succesful')
+        return redirect(url_for('tutorials_upload'))
+    flash('username or password is invalid', 'error')
+    return redirect(url_for('login'))
+
+
+@app.route('/logout/')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
+
 @app.route('/tutorials/upload/', methods=['GET', 'POST'])
+@login_required
 def tutorials_upload():
     if request.method == 'POST':
         tutorial_file = request.files['tutorial']
