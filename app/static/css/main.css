@@ -22,8 +22,8 @@ header {
 }
 
 header h1.mobile-logo {
-    margin: 0;
-    font-size: 2em;
+    margin: 8px 0;
+    font-size: 1.5em;
     color: #CCCCCC;
     text-transform: lowercase;
     float: left;
@@ -65,10 +65,8 @@ header h1.logo:hover {
 
 .paragraphcontainer {
     top: 40px;
-    margin-top: 20px;
+    margin: 20px 0 0 0;
     width: 90%;
-    margin: 0 auto;
-
 }
 
 .paragraphcontainer > * {
